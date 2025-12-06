@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -16,26 +17,46 @@ const Hero = () => {
           {/* Left: Text Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-up">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+            >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">AI-Powered Resume Builder</span>
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 animate-fade-up text-balance">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 text-balance"
+            >
               Turn your projects into a{" "}
               <span className="gradient-text">job-ready resume</span>{" "}
               in minutes.
-            </h1>
+            </motion.h1>
 
             {/* Subheading */}
-            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-up-delay-1 text-balance">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 text-balance"
+            >
               An AI-guided resume coach that helps you build, review, and score resumes in real time. 
               Designed for students, developers, and career switchers.
-            </p>
+            </motion.p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-up-delay-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+            >
               <Button variant="hero" size="xl" className="group">
                 Start for free
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -44,10 +65,15 @@ const Hero = () => {
                 <Play className="w-5 h-5" />
                 View demo
               </Button>
-            </div>
+            </motion.div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-4 justify-center lg:justify-start text-sm text-muted-foreground animate-fade-up-delay-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap items-center gap-4 justify-center lg:justify-start text-sm text-muted-foreground"
+            >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-accent" />
                 <span>No signup required</span>
@@ -60,11 +86,16 @@ const Hero = () => {
                 <CheckCircle2 className="w-4 h-4 text-accent" />
                 <span>Export as PDF</span>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right: Product Mockup */}
-          <div className="relative animate-fade-up-delay-2">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+            className="relative"
+          >
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-2xl opacity-60 animate-pulse-soft" />
@@ -147,7 +178,12 @@ const Hero = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -right-4 top-1/4 glass-card rounded-xl p-3 shadow-elevated animate-float">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="absolute -right-4 top-1/4 glass-card rounded-xl p-3 shadow-elevated animate-float"
+              >
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
                     <CheckCircle2 className="w-4 h-4 text-accent" />
@@ -157,16 +193,22 @@ const Hero = () => {
                     <div className="text-sm font-bold text-accent">92/100</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="absolute -left-4 bottom-1/4 glass-card rounded-xl p-3 shadow-elevated animate-float" style={{ animationDelay: '1s' }}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute -left-4 bottom-1/4 glass-card rounded-xl p-3 shadow-elevated animate-float"
+                style={{ animationDelay: '1s' }}
+              >
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-primary" />
                   <span className="text-xs font-medium text-foreground">AI Enhanced</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

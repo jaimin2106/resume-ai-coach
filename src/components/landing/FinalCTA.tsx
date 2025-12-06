@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github } from "lucide-react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 
 const FinalCTA = () => {
   return (
@@ -13,43 +14,57 @@ const FinalCTA = () => {
       <div className="container-tight">
         <div className="text-center max-w-2xl mx-auto">
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Build your job-ready resume in{" "}
-            <span className="gradient-text">under 10 minutes</span>
-          </h2>
+          <ScrollReveal>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Build your job-ready resume in{" "}
+              <span className="gradient-text">under 10 minutes</span>
+            </h2>
+          </ScrollReveal>
 
           {/* Subheading */}
-          <p className="text-lg text-muted-foreground mb-10">
-            No signup required. Start free and export your first resume today.
-          </p>
+          <ScrollReveal delay={0.1}>
+            <p className="text-lg text-muted-foreground mb-10">
+              No signup required. Start free and export your first resume today.
+            </p>
+          </ScrollReveal>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button variant="hero" size="xl" className="group">
-              Start Building Now
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="heroOutline" size="xl" className="group">
-              <Github className="w-5 h-5" />
-              View on GitHub
-            </Button>
-          </div>
+          <ScrollReveal delay={0.2}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button variant="hero" size="xl" className="group">
+                Start Building Now
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="heroOutline" size="xl" className="group">
+                <Github className="w-5 h-5" />
+                View on GitHub
+              </Button>
+            </div>
+          </ScrollReveal>
 
           {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border/50">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">500+</div>
-              <div className="text-sm text-muted-foreground">Users</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">1,000+</div>
-              <div className="text-sm text-muted-foreground">Resumes Created</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-foreground">4.9/5</div>
-              <div className="text-sm text-muted-foreground">User Rating</div>
-            </div>
-          </div>
+          <ScrollReveal delay={0.3}>
+            <StaggerContainer className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border/50" staggerDelay={0.1}>
+              <StaggerItem>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">500+</div>
+                  <div className="text-sm text-muted-foreground">Users</div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">1,000+</div>
+                  <div className="text-sm text-muted-foreground">Resumes Created</div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-foreground">4.9/5</div>
+                  <div className="text-sm text-muted-foreground">User Rating</div>
+                </div>
+              </StaggerItem>
+            </StaggerContainer>
+          </ScrollReveal>
         </div>
       </div>
     </section>

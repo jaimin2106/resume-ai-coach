@@ -1,4 +1,5 @@
 import { Eye, Sparkles, ShieldCheck, Cloud } from "lucide-react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/scroll-reveal";
 
 const features = [
   {
@@ -28,7 +29,7 @@ const Features = () => {
     <section id="features" className="section-spacing bg-surface-sunken">
       <div className="container-tight">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Built smarter, for{" "}
             <span className="gradient-text">real-world results</span>
@@ -36,36 +37,34 @@ const Features = () => {
           <p className="text-lg text-muted-foreground">
             Everything you need to create a resume that gets interviews.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group relative bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4 shadow-md group-hover:shadow-glow transition-shadow">
-                <feature.icon className="w-6 h-6 text-primary-foreground" />
-              </div>
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+          {features.map((feature) => (
+            <StaggerItem key={feature.title}>
+              <div className="group relative h-full bg-card rounded-2xl p-6 border border-border/50 shadow-sm hover:shadow-elevated transition-all duration-300 hover:-translate-y-1">
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center mb-4 shadow-md group-hover:shadow-glow transition-shadow">
+                  <feature.icon className="w-6 h-6 text-primary-foreground" />
+                </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
+                {/* Content */}
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
 
-              {/* Hover gradient border effect */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5" />
+                {/* Hover gradient border effect */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5" />
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
