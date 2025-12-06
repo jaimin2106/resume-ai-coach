@@ -1,0 +1,59 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Github } from "lucide-react";
+
+const FinalCTA = () => {
+  return (
+    <section className="section-spacing relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-primary/10 to-transparent rounded-full blur-3xl" />
+      </div>
+
+      <div className="container-tight">
+        <div className="text-center max-w-2xl mx-auto">
+          {/* Headline */}
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Build your job-ready resume in{" "}
+            <span className="gradient-text">under 10 minutes</span>
+          </h2>
+
+          {/* Subheading */}
+          <p className="text-lg text-muted-foreground mb-10">
+            No signup required. Start free and export your first resume today.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button variant="hero" size="xl" className="group">
+              Start Building Now
+              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button variant="heroOutline" size="xl" className="group">
+              <Github className="w-5 h-5" />
+              View on GitHub
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-border/50">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">500+</div>
+              <div className="text-sm text-muted-foreground">Users</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">1,000+</div>
+              <div className="text-sm text-muted-foreground">Resumes Created</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-foreground">4.9/5</div>
+              <div className="text-sm text-muted-foreground">User Rating</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FinalCTA;
